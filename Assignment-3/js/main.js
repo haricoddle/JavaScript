@@ -99,6 +99,9 @@ var string = "Javascript is the King of the web.";
     //b:-8th character of the string.
     console.log(string[8]);
 
+    //c:Console the above code in browser console.
+    console.log(string[8]);
+    
     //d:-Position of a word.
     console.log(string.indexOf("King"));
 
