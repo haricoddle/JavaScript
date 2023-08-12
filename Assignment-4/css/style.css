@@ -1,0 +1,10 @@
+.main-div{
+    margin-block: 50px;
+    margin-inline: 50px;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXTERIOR</title>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+    <section class="details">
+        <h2>Resgistration form</h2>
+        <form id="reg-form">
+           <input type="text" id="name">
+           <input type="number" id="age">
+           <input type="submit" value="Submit">
+        </form>
+    </section>
+    <section class="q-five">
+        <div class="main-div">
+            <p class="para" id="para">
+                Name:Hari,Age=24.
+            </p>
+        </div>
+        <button id="hide-div" class="hide-div">Hide/Show</button>
+        <button id="change-color" class="change-color">Change color</button>
+        <button id="display-info" class="display-info">Show Info</button>
+    </section>
+    <section class="q-six">
+        <h2>Select any option</h2>
+        <select id="numberSelect" onchange="selectNumber(this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <div id="messageDiv" onmouseover="colorChange()" onmouseout="resetColor()">
+            <p id="message"></p>
+    </section>
+    <section>
+        <form id="titleForm">
+            <label for="titleInput">Enter a new page title:</label><br>
+            <input type="text" id="titleInput" maxlength="50" required><br>
+            <span class="error" id="errorText"></span><br>
+            <button type="submit">Change Page Title</button>
+          </form>
+    </section>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
