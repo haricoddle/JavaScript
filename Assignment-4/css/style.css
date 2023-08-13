@@ -1,4 +1,4 @@
-.main-div{
+#main-div {
     margin-block: 50px;
     margin-inline: 50px;
     height: 200px;
@@ -7,4 +7,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.para {
+    display: block;
+}
+.q-eight{
+    margin-block: 50px;
 }
