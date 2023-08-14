@@ -4,10 +4,10 @@
 // Check the variable declarations in JavaScript and select the one that is appropriate for your variables.
 
 //boolean
-var val = true;
+const val = true;
 console.log(typeof val);
 //null
-var n = null;
+const n = null;
 console.log(typeof n);
 //undefined
 let a;
@@ -19,10 +19,10 @@ console.log(typeof age);
 let mesg = "world";
 console.log(typeof mesg);
 //symbol
-var s = Symbol(9);
+const s = Symbol(9);
 console.log(typeof s);
 //object
-var myCar = new Object();
+const myCar = new Object();
 console.log(typeof myCar);
 
 //2:-concatninate the strings with and without template literals
