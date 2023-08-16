@@ -1,12 +1,10 @@
 //1:-
+//a:-Removing an element and printing the length of the array.
+let arr = ["1","2","3","4","5","6","7"];
+arr.splice(5 , 1);
+console.log(arr, arr.length);
 
-    //a:-Removing an element and printing the length of the array.
-        let arr = ["1","2","3","4","5","6","7"];
-        arr.splice(5,1);
-        console.log(arr, arr.length);
-
-
-    //b:-Converting all the array items to data type numbers
+//b:-Converting all the array items to data type numbers
         let arr1 = ["1","2","3","4","5","6","7"];
         const arr2 = arr1.map(str => {
             return Number(str);
@@ -91,15 +89,11 @@
         console.log(arr9.concat(arr10));
         
 //2:-Star pattern 
-for(let i=1;i<=5;i++)
-{
-    for(let j=1;j<=(5-i);j++)
-    {
-       console.log("");
-    }
-    for(let k=1;k<=i;k++)
-    {
-        console.log(" * ");
-    }
-    console.log();
+for(let i = 1; i <= 5; i++) {
+  for (let j = 1; j <= (5 - i); j++) {
+    console.log("");
+  }
+  for (let k = 1; k <= i; k++) {
+    console.log(" * "); }
+  console.log();
 }
