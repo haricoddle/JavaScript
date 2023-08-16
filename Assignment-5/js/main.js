@@ -140,7 +140,7 @@ const obj = (function () {
 console.log(obj.favMovie);
 obj.favMovie = 'Interstellar';
 console.log(obj.favMovie);
-//4
+//4:- Creating a Static Variable and consoling it.
 class statExample {
   static myBike = 'Yamaha';
 }
