@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-//1:- Validate the form
+//1:- Validate the form and check for empty feilds.
 const form = document.getElementById('form');
 const names = document.getElementById('name');
 const phone = document.getElementById('phone');
@@ -87,7 +87,7 @@ form.addEventListener('submit', e => {
   const myobjString = JSON.stringify(myobj);
   localStorage.setItem('myObj', myobjString);
 });
-//e:-Prepopulate the form
+//e:-Prepopulate the form with value stored in localstorage.
 const prePopulateBtn = document.getElementById('prePopulate');
 // eslint-disable-next-line arrow-parens
 prePopulateBtn.addEventListener('submit', e => {
@@ -109,7 +109,7 @@ prePopulateBtn.addEventListener('submit', e => {
     document.form[form][pin].value = myObj.pin;
   }
 });
-//2:- creating a div and button
+//2:- creating a div and button using JS only.
 const secDiv = document.createElement('div');
 secDiv.style.display = 'none';
 document.body.appendChild(secDiv);
@@ -124,7 +124,7 @@ thirdBtn.addEventListener('click', e => {
   secDiv.textContent = details;
   secDiv.style.display = 'block';
 });
-//3:- Creating a private variable and consoling it
+//3:- Creating a private variable and consoling it by accessing it.
 // eslint-disable-next-line no-unused-vars
 const obj = (function () {
   let favMovie = 'Shutter Island';
@@ -140,7 +140,7 @@ const obj = (function () {
 console.log(obj.favMovie);
 obj.favMovie = 'Interstellar';
 console.log(obj.favMovie);
-//4:- Creating a Static Variable and consoling it.
+//4:- Creating a Static Variable and consoling it by accessing it.
 class statExample {
   static myBike = 'Yamaha';
 }

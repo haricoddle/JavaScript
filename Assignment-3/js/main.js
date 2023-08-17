@@ -1,5 +1,7 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-console */
 /* eslint-disable no-shadow */
+
 // 1:-Using switch with map
 const arr = ['car', 1, 5, 'js', 'node js', 'mysql', 'sql'];
 const newArray = arr.map((arr) => arr);
@@ -13,7 +15,7 @@ switch (newArray.length === arr.length) {
   default:
     console.log('not able to print');
 }
-// 2:-Closure-function
+// 2:-Closure-function to delete indexes 5 and 2 of the array.
 function second(a, b) {
   const array = [1, 2, 3, 4, 5, 6];
   // eslint-disable-next-line no-use-before-define
@@ -26,7 +28,7 @@ function second(a, b) {
 }
 second(5, 2);
 
-// 3:-Using Constructor method
+// 3:-Using Constructor method to console all element spassed to the array.
 function constructor(arrayThird) {
   // eslint-disable-next-line no-unused-expressions
   this.arrayThird;
@@ -37,7 +39,8 @@ function constructor(arrayThird) {
 }
 constructor([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
-// 4:-Function taking two arguments ,one array and one element to delete or add to array.
+/* 4:-Function taking two arguments ,one array and an element,
+ and to search the array for the element and delete if present or add if not present*/
 function checking(arrayFour, item) {
   // eslint-disable-next-line no-unused-expressions
   this.arrayFour;
@@ -59,7 +62,7 @@ function checking(arrayFour, item) {
 }
 checking([11, 22, 33, 44, 55, 66], 77);
 
-// 5:-Self invoking function
+// 5:-Self invoking function to console a name.
 // eslint-disable-next-line func-names
 (function () {
   console.log('hari');
@@ -72,7 +75,7 @@ const obj = {
 const secondObject = Object.keys(obj).reverse();
 console.log(secondObject);
 
-// 7:-Deleting element with id=24
+// 7:-Deleting a data array item with id=24.
 const data = [{ a: 'one', id: '22' }, { a: 'four', id: '7' }, { a: 'six', b: '2' }, { a: 'sixty', id: '24' }, { a: 'five', id: '212' }];
 console.log('before removing the element');
 // eslint-disable-next-line no-plusplus
@@ -88,26 +91,26 @@ for (let i = 0; i < data.length; i++) {
 }
 console.log(data);
 
-// 8:- Strings
+// 8:- working with Strings.
 const string = 'Javascript is the King of the web.';
 
-// a:-length of the string
+// a:-To get the length of the string
 console.log(string.length);
 
-// b:-8th character of the string.
+// b:-Printing 8th character of the string.
 console.log(string[8]);
 
-// c:Console the above code in browser console.
+// c:-Console the above code in browser console.
 console.log(string[8]);
 
-// d:-Position of a word.
+// d:-To get the position of word "King".
 console.log(string.indexOf('King'));
 
-// e:-replace words in string.
+// e:-Replace the words "king" with "Emperor" in the string.
 const stringReplace = string.replace('King', 'Emperor');
 console.log(stringReplace);
 
-// f:- insert a word before king in the string.
+// f:- Insert a word before king in the string.
 const index = string.indexOf('King');
 const newString = `${string.slice(0, index)}new ${string.slice(index, 34)}`;
 console.log(newString);
@@ -121,7 +124,7 @@ const isIndex = string.indexOf('is');
 const partString = string.substr(isIndex, 11);
 console.log(partString);
 
-// i:-Getting the count of occurence of the words
+// i:-Getting the count of occurence of the words "the" and "of".
 const stringSplit = string.split(' ');
 console.log(stringSplit);
 let count1 = 0;
