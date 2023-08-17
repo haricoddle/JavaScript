@@ -1,0 +1,15 @@
+1:- File path to JS file was not specified properly.
+
+2:- Declaration of array was changed from let to const.
+
+3:- Declaration of selectIndex was changed from const to let ,as values to it are reassigned.
+
+4:- Corrected a typo in 'getElementById'.
+
+5:- Id given was not proper , it was changed to 'imgs' from 'img'.
+
+6:- File path to the images was not given properly.
+
+7:- Strings were placed in single quotes insted of double quotes.
+
+8:- In the second if condition the condition was changed to "< 0" insted of "<= 0".
