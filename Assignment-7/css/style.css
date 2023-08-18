@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(40, 39, 39);
+}
+.style{
+    height: 150px;
+    width: 150px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+main{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 16px;
+    justify-content: center;
+    background-color: burlywood;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+h1{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+#message{
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 2rem;
+}
