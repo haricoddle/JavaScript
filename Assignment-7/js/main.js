@@ -82,19 +82,18 @@ function printXO(div) {
       div.innerHTML = 'O';
       test();
     }
-  } else {
-    alert('game has ended');
-    pp.innerHTML = '***Its a Draw.***';
   }
 }
 
 function test() {
 // eslint-disable-next-line no-mixed-operators
-  if (div1.textContent === 'X' && div2.textContent === 'X' && div3.textContent === 'X' || div1.textContent === 'X' && div4.textContent === 'X' && div7.textContent === 'X' || div7.textContent === 'X' && div8.textContent === 'X' && div9.textContent === 'X' || div9.textContent === 'X' && div6.textContent === 'X' && div3.textContent === 'X' || div1.textContent === 'X' && div5.textContent === 'X' && div9.textContent === 'X' || div3.textContent === 'X' && div5.textContent === 'X' && div7.textContent === 'X' || div2.textContent === 'X' && div5.textContent === 'X' && div8.textContent === 'X') {
+  if (div1.textContent === 'X' && div2.textContent === 'X' && div3.textContent === 'X' || div1.textContent === 'X' && div4.textContent === 'X' && div7.textContent === 'X' || div7.textContent === 'X' && div8.textContent === 'X' && div9.textContent === 'X' || div9.textContent === 'X' && div6.textContent === 'X' && div3.textContent === 'X' || div1.textContent === 'X' && div5.textContent === 'X' && div9.textContent === 'X' || div3.textContent === 'X' && div5.textContent === 'X' && div7.textContent === 'X' || div2.textContent === 'X' && div5.textContent === 'X' && div8.textContent === 'X' || div4.textContent === 'X' && div5.textContent === 'X' && div6.textContent === 'X') {
     pp.innerHTML = '***The winner is X***';
 
     // eslint-disable-next-line no-mixed-operators
-  } else if (div1.textContent === 'O' && div2.textContent === 'O' && div3.textContent === 'O' || div1.textContent === 'O' && div4.textContent === 'O' && div7.textContent === 'O' || div7.textContent === 'O' && div8.textContent === 'O' && div9.textContent === 'O' || div9.textContent === 'O' && div6.textContent === 'O' && div3.textContent === 'O' || div1.textContent === 'O' && div5.textContent === 'O' && div9.textContent === 'O' || div3.textContent === 'O' && div5.textContent === 'O' && div7.textContent === 'O' || div2.textContent === 'O' && div5.textContent === 'O' && div8.textContent === 'O') {
+  } else if (div1.textContent === 'O' && div2.textContent === 'O' && div3.textContent === 'O' || div1.textContent === 'O' && div4.textContent === 'O' && div7.textContent === 'O' || div7.textContent === 'O' && div8.textContent === 'O' && div9.textContent === 'O' || div9.textContent === 'O' && div6.textContent === 'O' && div3.textContent === 'O' || div1.textContent === 'O' && div5.textContent === 'O' && div9.textContent === 'O' || div3.textContent === 'O' && div5.textContent === 'O' && div7.textContent === 'O' || div2.textContent === 'O' && div5.textContent === 'O' && div8.textContent === 'O' || div4.textContent === 'O' && div5.textContent === 'O' && div6.textContent === 'O') {
     pp.innerHTML = '****O is the Winner****';
+  } else if (count === 9 && pp.textContent === '') {
+    pp.innerHTML = '***Its a Draw***';
   }
 }
