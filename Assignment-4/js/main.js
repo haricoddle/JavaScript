@@ -16,7 +16,7 @@ hostName();
 function proctol() {
   const isProtocl = window.location.protocol;
   if (isProtocl === 'https') {
-    console.log('Website is safe');
+    console.log('Website uses HTTPS protocol.');
   } else {
     console.warn('Website dosen\'t contain https');
   }
@@ -29,6 +29,7 @@ addEventListener('load', () => {
     alert('The page has been refreshed');
   }, 10000);
 });
+
 // 2:-Store the basic details in localStorage and delete them after 60seconds.
 const myobj = {
   name: 'hari',
@@ -42,26 +43,32 @@ setTimeout(() => {
   localStorage.removeItem('myObj');
   console.log('Details deleted from local storage');
 }, 60000);
+
 //3:-Creating a form and on submit store the details in form of cookies.
 const form = document.getElementById('reg-form');
 // eslint-disable-next-line prefer-arrow-callback
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
   // eslint-disable-next-line no-unused-vars
   const username = document.getElementById('name').value;
   const userAge = document.getElementById('age').value;
   // eslint-disable-next-line no-undef
-  document.cookie = username.toString();
-  document.cookie = userAge.toString();
+  const userDetails = {
+    username: username,
+    userAge: userAge,
+  };
+  const userDetailsJSON = JSON.stringify(userDetails);
+  document.cookie = `userData=${userDetailsJSON}`;
   console.log(document.cookie);
 });
+
 //4:- Redirecting to the homepage of google from console.
 console.log(window.location.assign = 'https://www.google.com/');
 
 //5:-Create a div with background color red and buttons
 //a:-To hide the div.
 const mainDiv = document.getElementById('main-div');
-const hideButton = document.getElementById('hide-div');
+const hideButton = document.getElementById('hide-div-btn');
 hideButton.addEventListener('click', () => {
   if (mainDiv.style.display === 'block') {
     // eslint-disable-next-line no-unused-expressions
@@ -72,7 +79,7 @@ hideButton.addEventListener('click', () => {
 });
 
 //b:To change the background color of the div
-const changeColor = document.getElementById('change-color');
+const changeColor = document.getElementById('change-color-btn');
 changeColor.addEventListener('click', () => {
   // if (mainDiv.style.backgroundColor === 'default') {
   mainDiv.style.backgroundColor = 'yellow';
@@ -82,12 +89,12 @@ changeColor.addEventListener('click', () => {
 });
 
 //c:-To show the basic details on the div.
-const displayInfo = document.getElementById('display-info');
+const displayInfo = document.getElementById('display-info-btn');
 const infoPara = document.getElementById('info-para');
 displayInfo.addEventListener('click', () => {
   if (mainDiv.style.display === 'none') {
     infoPara.style.display = 'none';
-  } else {
+  } else if (mainDiv.style.display === 'block') {
     infoPara.style.display = 'block';
   }
 });
@@ -103,12 +110,12 @@ function selectNumber(value) {
   }
 }
 // eslint-disable-next-line no-unused-vars
-function highColor() {
-  document.getElementById('messageDiv').style.backgroundColor = 'yellow';
+function colorChange() {
+  document.getElementById('message-div').style.backgroundColor = 'yellow';
 }
 // eslint-disable-next-line no-unused-vars
 function defaultColor() {
-  document.getElementById('messageDiv').style.backgroundColor = 'white';
+  document.getElementById('message-div').style.backgroundColor = 'white';
 }
 
 //7:- Creating an array with 10 elements and making 10 array by itterating the array.
@@ -135,7 +142,7 @@ document.getElementById('titleForm').addEventListener('submit', (event) => {
 
 //9:-To show an alert when pressed cntrl + enter.
 document.addEventListener('keydown', (event) => {
-  if (event.ctrlKey && event.key === 'Enter') {
+  if (event.ctrlKey && event.keyCode === 13) {
     alert('Control + Enter pressed!');
   }
 });
