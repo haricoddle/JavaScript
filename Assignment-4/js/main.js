@@ -1,36 +1,34 @@
 /* eslint-disable linebreak-style */
-// 1
-// a:-Function to calculate screen height of the browser screen.
-function screenHeight() {
+// 1:- Create a function to-
+function firstQestion() {
+  // a:-Calculate the height of the end user's browser screen.
   const scrnHeight = window.screen.height;
   console.log(`Height of the screen is ${scrnHeight}`);
-}
-screenHeight();
-// b:- To console the name of the web host.
-function hostName() {
+
+  // b:-To console the name of the web host
   const host = window.location.hostname;
   console.log(`The web host is ${host}`);
-}
-hostName();
-//c:-To show warning message if no hhtps protocol used in the website.
-function proctol() {
+
+  // c:-To show a warning message if there is no https protocol used in the visited website.
   const isProtocl = window.location.protocol;
   if (isProtocl === 'https') {
     console.log('Website uses HTTPS protocol.');
   } else {
     console.warn('Website dosen\'t contain https');
   }
-}
-proctol();
-// d:-Show an alert message after 10 seconds.
-// eslint-disable-next-line no-restricted-globals
-addEventListener('load', () => {
-  setTimeout(() => {
-    alert('The page has been refreshed');
-  }, 10000);
-});
 
-// 2:-Store the basic details in localStorage and delete them after 60seconds.
+  // d:-To show an alert message after 10sec while the page is refreshed.
+  // eslint-disable-next-line no-restricted-globals
+  addEventListener('load', () => {
+    setTimeout(() => {
+      alert('The page has been refreshed');
+    }, 10000);
+  });
+}
+firstQestion();
+
+/* 2:-Store your basic details in local storage of the browser every time the page loads,
+then console them and finally delete them after 1 minute of the page load*/
 const myobj = {
   name: 'hari',
   age: 24,
@@ -44,15 +42,13 @@ setTimeout(() => {
   console.log('Details deleted from local storage');
 }, 60000);
 
-//3:-Creating a form and on submit store the details in form of cookies.
+/* 3:- Create a form and submit button, on click of the button
+store your basic details from the form in the cookies.*/
 const form = document.getElementById('reg-form');
-// eslint-disable-next-line prefer-arrow-callback
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  // eslint-disable-next-line no-unused-vars
   const username = document.getElementById('name').value;
   const userAge = document.getElementById('age').value;
-  // eslint-disable-next-line no-undef
   const userDetails = {
     username: username,
     userAge: userAge,
@@ -62,44 +58,48 @@ form.addEventListener('submit', (event) => {
   console.log(document.cookie);
 });
 
-//4:- Redirecting to the homepage of google from console.
+// 4:-Redirect to the homepage of google from the console.
 console.log(window.location.assign = 'https://www.google.com/');
 
-//5:-Create a div with background color red and buttons
-//a:-To hide the div.
-const mainDiv = document.getElementById('main-div');
-const hideButton = document.getElementById('hide-div-btn');
-hideButton.addEventListener('click', () => {
+// 5:-Create a div with background color red, create buttons
+// a:-to hide the div
+const mainDiv = document.getElementById('details-block');
+const hideBtn = document.getElementById('hide-btn');
+hideBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   if (mainDiv.style.display === 'block') {
-    // eslint-disable-next-line no-unused-expressions
     mainDiv.style.display = 'none';
   } else {
     mainDiv.style.display = 'block';
   }
 });
 
-//b:To change the background color of the div
-const changeColor = document.getElementById('change-color-btn');
-changeColor.addEventListener('click', () => {
-  // if (mainDiv.style.backgroundColor === 'default') {
-  mainDiv.style.backgroundColor = 'yellow';
-  // } else {
-  //   mainDiv.style.backgroundColor = 'none';
-  // }
-});
-
-//c:-To show the basic details on the div.
-const displayInfo = document.getElementById('display-info-btn');
-const infoPara = document.getElementById('info-para');
-displayInfo.addEventListener('click', () => {
-  if (mainDiv.style.display === 'none') {
-    infoPara.style.display = 'none';
-  } else if (mainDiv.style.display === 'block') {
-    infoPara.style.display = 'block';
+// b:-to change the background color of the div
+const colorBtn = document.getElementById('color-btn');
+colorBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (mainDiv.style.backgroundColor === 'red') {
+    mainDiv.style.backgroundColor = 'yellow';
+  } else {
+    mainDiv.style.backgroundColor = 'red';
   }
 });
 
-//6:-Creating the select box with value 1-10, and when selected 9 display a message.
+// c:- to show your basic details on the div, the details should hide/show, on the click.
+const detailsPara = document.getElementById('details-para');
+const detailsBtn = document.getElementById('details-btn');
+detailsBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (detailsPara.style.display === 'block') {
+    detailsPara.style.display = 'none';
+  } else {
+    detailsPara.style.display = 'block';
+  }
+});
+
+/* 6:-Create a select box with numbers 1 to 10,  when selected 9,you should change
+the selection to 10and show a message that 9 is fully occupied please select another number",
+ on hovering the div it should change the background color of the div into a highlighting shade*/
 // eslint-disable-next-line no-unused-vars
 function selectNumber(value) {
   if (value === '9') {
@@ -109,27 +109,37 @@ function selectNumber(value) {
     document.getElementById('message').innerHTML = `You selected ${value}`;
   }
 }
-// eslint-disable-next-line no-unused-vars
-function colorChange() {
-  document.getElementById('message-div').style.backgroundColor = 'yellow';
-}
-// eslint-disable-next-line no-unused-vars
-function defaultColor() {
-  document.getElementById('message-div').style.backgroundColor = 'white';
-}
+const messageArea = document.getElementById('message-div');
+messageArea.addEventListener('mouseover', () => {
+  messageArea.style.backgroundColor = 'yellow';
+});
+messageArea.addEventListener('mouseout', () => {
+  messageArea.style.backgroundColor = 'white';
+});
 
-//7:- Creating an array with 10 elements and making 10 array by itterating the array.
+/* 7:- Consider an array with names of 10 programming languages, make 10 buttons by iterating
+this array, when clicked on each button the name of the programming language should be shown
+in a corresponding div*/
 const progLanguage = ['Java', 'HTML', 'CSS', 'Python', 'JavaScript', 'SQL', 'GO', 'PHP', 'C++', 'C#'];
-// eslint-disable-next-line no-plusplus, no-restricted-syntax, guard-for-in
+// eslint-disable-next-line no-restricted-syntax, guard-for-in
 for (const i in progLanguage) {
   const newButton = document.createElement('button');
   newButton.textContent = progLanguage[i];
   document.body.appendChild(newButton);
+  clickListener(newButton, progLanguage[i]);
 }
-
-//8:- Create a from in which when entered a value will change the name of the page to the same.
-document.getElementById('titleForm').addEventListener('submit', (event) => {
-  event.preventDefault();
+const progMesg = document.getElementById('sev-mesg');
+function clickListener(button, language) {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    progMesg.innerHTML = `You clicked on ${language}`;
+  });
+}
+/* 8:-Create a form with a text field which when submitted, will change the tab title to whatever
+is entered, limit the field to 50 characters*/
+const titleForm = document.getElementById('titleForm');
+titleForm.addEventListener('submit', (e) => {
+  e.preventDefault();
   const titleInput = document.getElementById('titleInput');
   const errorText = document.getElementById('errorText');
   const newTitle = titleInput.value.trim();
@@ -140,7 +150,7 @@ document.getElementById('titleForm').addEventListener('submit', (event) => {
   }
 });
 
-//9:-To show an alert when pressed cntrl + enter.
+// 9:-When the control+enter key is pressed show an alert message.
 document.addEventListener('keydown', (event) => {
   if (event.ctrlKey && event.keyCode === 13) {
     alert('Control + Enter pressed!');

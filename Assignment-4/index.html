@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
-   
     <section class="details">
         <h2>Resgistration form</h2>
         <form id="reg-form">
-           <input type="text" id="name">
-           <input type="number" id="age">
+            <label for="name" name="name">Name</label>
+           <input type="text" id="name"><br>
+           <label for="age" name="age">Age</label>
+           <input type="number" id="age"><br>
            <input type="submit" value="Submit">
         </form>
     </section>
-    <section class="q-five">
-        <div id="main-div">
-            <p id="info-para">Name : Hari, Age :24</p>
-          </div>
-          <button id="hide-div-btn">Hide/Show Div</button>
-          <button id="change-color-btn">Change Color</button>
-          <button id="display-info-btn">Toggle Details</button>
+    <section id="q-five">
+        <div id="details-block">
+            <p id="details-para"> Name: Hari <br>Age:24</p>
+        </div>
+        <button id="hide-btn">Hide Div</button>
+        <button id="color-btn">Change color</button>
+        <button id="details-btn">Hide/Show Details</button>
     </section>
     <section class="q-six">
         <h2>Select any option</h2>
@@ -43,10 +45,7 @@
             <p id="message"></p>
         </div>
     </section>
-    <section class="q-seven">
-
-    </section>
-    <section class="q-eight">
+    <section id="q-eight">
         <form id="titleForm">
             <label for="titleInput">Enter a new page title:</label><br>
             <input type="text" id="titleInput"><br>
@@ -54,6 +53,8 @@
             <button type="submit">Change Page Title</button>
           </form>
     </section>
-    <script src="js/main.js"></script>
+    <section id="q-seven">
+        <p id="sev-mesg"></p>
+    </section>
 </body>
 </html>
