@@ -1,112 +1,97 @@
 /* eslint-disable linebreak-style */
-//1:- Validate the form and check for empty feilds.
-const form = document.getElementById('form');
-const names = document.getElementById('name');
-const phone = document.getElementById('phone');
-const place = document.getElementById('place');
-const company = document.getElementById('company');
-const pin = document.getElementById('pin');
+// 1:- Make a form with fields name, phone number, place, company name, pin code.
+/* a:- if any of the fields are empty on submitting it should show corresponding
+error messages below all the required fields*/
+const form = document.getElementById('myform');
+const submitBtn = document.getElementById('submitbtn');
+const populateBtn = document.getElementById('prepopulateBtn');
+const errorMesgName = document.getElementById('errorMessagesName');
+const errorMesgPhone = document.getElementById('errorMessagesPhone');
+const errorMesgPlace = document.getElementById('errorMessagesPlace');
+const errorMesgCompany = document.getElementById('errorMessagesCompany');
+const errorMesgPin = document.getElementById('errorMessagesPin');
 
-// eslint-disable-next-line arrow-parens
-form.addEventListener('submit', e => {
+submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  // eslint-disable-next-line no-use-before-define
-  validateInputs();
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const place = document.getElementById('place').value;
+  const company = document.getElementById('company').value;
+  const pincode = document.getElementById('pincode').value;
+
+  errorMesgName.innerHTML = '';
+  errorMesgPhone.innerHTML = '';
+  errorMesgPlace.innerHTML = '';
+  errorMesgCompany.innerHTML = '';
+  errorMesgPin.innerHTML = '';
+  let errors = false;
+
+  if (name === '') {
+    errorMesgName.innerHTML = 'Name is required<br>';
+    errors = true;
+  }
+  const phoneCheck = Number(phone);
+  if (!phone.trim()) {
+    errorMesgPhone.innerHTML = 'Phone number is required<br>';
+    errors = true;
+  }
+  // c:- The minimum length of the phone number should be 10
+  if (phone.trim().length < 10) {
+    errorMesgPhone.innerHTML = 'Enter proper phone number (minimum 10 digits)<br>';
+    errors = true;
+  }
+  // b:-pin code and mobile number fields should not be submitted with non-integer values
+  if (isNaN(phoneCheck)) {
+    errorMesgPhone.innerHTML = 'Phone number should be an integer<br>';
+    errors = true;
+  }
+
+  if (!place.trim()) {
+    errorMesgPlace.innerHTML = 'Place is required<br>';
+    errors = true;
+  }
+
+  if (!company.trim()) {
+    errorMesgCompany.innerHTML = 'Company name is required<br>';
+    errors = true;
+  }
+  const pinCheck = Number(pincode);
+  if (!pincode.trim()) {
+    errorMesgPin.innerHTML = 'Pincode is required<br>';
+    errors = true;
+  }
+  if (isNaN(pinCheck)) {
+    errorMesgPin.innerHTML = 'Pincode should be an integer<br>';
+    errors = true;
+  }
+  // d:- On submission of the form, store the details in the local storage and clear the form
+  if (!errors) {
+    const formData = {
+      name,
+      phone,
+      place,
+      company,
+      pincode,
+    };
+    localStorage.setItem('formData', JSON.stringify(formData));
+    form.reset();
+    populateBtn.disabled = false;
+  }
 });
 
-const setError = (element, message) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector('.error');
-
-  errorDisplay.innerText = message;
-  inputControl.classList.add('error');
-  inputControl.classList.remove('success');
-};
-
-// eslint-disable-next-line arrow-parens
-const setSuccess = element => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector('.error');
-
-  errorDisplay.innerText = '';
-  inputControl.classList.add('success');
-  inputControl.classList.remove('error');
-};
-
-const validateInputs = () => {
-  const nameValue = names.value.trim();
-  const phoneValue = phone.value.trim();
-  const placeValue = place.value.trim();
-  const companyValue = company.value.trim();
-  const pinValue = pin.value.trim();
-  //a:- Checking for empty feilds
-  if (nameValue === '') {
-    setError(names, 'Name is required');
-  } else {
-    setSuccess(names);
-  }
-
-  if (phoneValue === '') {
-    setError(phone, 'Phone is required');
-  } else if (phoneValue.length < 10) {
-    // c: Minimum length of phone number
-    setError(phone, 'Enter only 10 digits');
-    //b:- Checking for non-integer inputs
-  } else if (typeof phoneValue !== 'number') {
-    setError(phone, 'Enter only integer');
-  } else {
-    setSuccess(phone);
-  }
-
-  if (placeValue === '') {
-    setError(place, 'Enter your place');
-  } else {
-    setSuccess(place);
-  }
-
-  if (companyValue === '') {
-    setError(company, 'Enter your company name');
-  } else {
-    setSuccess(company);
-  }
-  if (pinValue === '') {
-    setError(pin, 'Enter your Pincode');
-  } else if (typeof phoneValue !== 'number') {
-    setError(pin, 'Enter only integer');
-  } else {
-    setSuccess(pin);
-  }
-};
-// d:- Stroring the entered details to localStrorage.
-// eslint-disable-next-line arrow-parens
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const myobj = {
-    name: names.value,
-    phone: phone.value,
-    place: place.value,
-    company: company.value,
-    pin: pin.value,
-  };
-  const myobjString = JSON.stringify(myobj);
-  localStorage.setItem('myObj', myobjString);
-});
-
-// e:- Prepopulate the form with value stored in localstorage.
-const prePopulateBtn = document.getElementById('prePopulate');
-// eslint-disable-next-line arrow-parens
-prePopulateBtn.addEventListener('submit', e => {
-  e.preventDefault();
-  const localData = localStorage.getItem('myObj');
-  if (localData) {
-    // eslint-disable-next-line no-unused-vars
-    const myObj = JSON.parse(localData);
-    // eslint-disable-next-line no-restricted-globals
-    document.form[form][names].value = myObj.names;
-    document.form[form][phone].value = myObj.phone;
-    document.form[form][company].value = myObj.company;
-    document.form[form][place].value = myObj.place;
-    document.form[form][pin].value = myObj.pin;
+if (localStorage.getItem('formData')) {
+  populateBtn.disabled = false;
+}
+/* e:-Make a prepopulate button, which when clicked will populate the
+form with values in the local storage if it exists*/
+populateBtn.addEventListener('click', () => {
+  const formData = JSON.parse(localStorage.getItem('formData'));
+  if (formData) {
+    document.getElementById('name').value = formData.name;
+    document.getElementById('phone').value = formData.phone;
+    document.getElementById('place').value = formData.place;
+    document.getElementById('company').value = formData.company;
+    document.getElementById('pincode').value = formData.pincode;
   }
 });
 

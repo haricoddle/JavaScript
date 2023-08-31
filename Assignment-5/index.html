@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment-5</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <form id="form" action="/">
-            <div class="input-control">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="place">Place</label>
-                <input id="place"name="place" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="company">Company</label>
-                <input id="company"name="company" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="pin">Pincode</label>
-                <input id="pin"name="pin" type="text">
-                <div class="error"></div>
-            </div>
-            <button type="submit">Submit</button>
-            <button type="submit" id="prePopulate">Auto fill the form</button>
-        </form>
-    </div>
-    <script defer src="js/main.js"></script>
+    <form action="/" id="myform">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name"> <br>
+        <div id="errorMessagesName" class="error-red"></div><br>
+
+        <label for="phone">Phone: </label>
+        <input type="text" id="phone" name="phone"> <br>
+        <div id="errorMessagesPhone" class="error-red"></div><br>
+
+        <label for="place">Place: </label>
+        <input type="text" id="place" name="place"> <br>
+        <div id="errorMessagesPlace" class="error-red"></div><br>
+    
+        <label for="company">Company: </label>
+        <input type="text" id="company" name="company"> <br>
+        <div id="errorMessagesCompany" class="error-red"></div><br>
+
+        <label for="pincode">PinCode: </label>
+        <input type="text" id="pincode" name="pincode"> <br>
+        <div id="errorMessagesPin" class="error-red"></div><br>
+
+        <input type="submit" id="submitbtn">
+    </form>
+    <button id="prepopulateBtn" disabled>Prepopulate Form</button>
+    <script src="js/main.js"></script>
 </body>
 </html>
