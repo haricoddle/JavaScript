@@ -50,6 +50,8 @@ function test() {
   // eslint-disable-next-line no-mixed-operators
   } else if (div1.textContent === 'O' && div2.textContent === 'O' && div3.textContent === 'O' || div1.textContent === 'O' && div4.textContent === 'O' && div7.textContent === 'O' || div7.textContent === 'O' && div8.textContent === 'O' && div9.textContent === 'O' || div9.textContent === 'O' && div6.textContent === 'O' && div3.textContent === 'O' || div1.textContent === 'O' && div5.textContent === 'O' && div9.textContent === 'O' || div3.textContent === 'O' && div5.textContent === 'O' && div7.textContent === 'O' || div2.textContent === 'O' && div5.textContent === 'O' && div8.textContent === 'O') {
     pp.innerHTML = '****O is the Winner****';
+  } else if (count === 9) {
+    pp.innerHTML = '****Its a DRAW***';
   }
 }
 function onClick() {
